@@ -1,0 +1,61 @@
+{
+  "name": "Tushar Neje",
+  "name_short": "Tushar",
+  "title": "Full-Stack Developer & AI Builder",
+  "tagline": "Diligent • Committed • Consistent",
+  "bio": "I'm a Computer Engineering student at VIIT Pune, building AI-powered systems and full-stack platforms. I care deeply about clean architecture, purposeful UI, and systems that actually solve problems. From ERP platforms to legal AI search to lung disease detection — I build things that matter.",
+  "bio_extended": "Polytechnic graduate with 94% aggregate (DKTE, Ichalkaranji) and currently pursuing B.Tech at Vishwakarma Institute of Information Technology, Pune. I've led student councils, organized hackathons, and shipped production systems across healthcare, legal, agriculture, and education domains. My stack centers on Python, Django, React, and AI/ML integration — with a growing interest in system design and developer tooling.",
+  "location": "Pune, India",
+  "location_secondary": "Ichalkaranji, Maharashtra, India",
+  "email": "nejetushar07@gmail.com",
+  "email_college": "tushar.22420085@viit.ac.in",
+  "phone": "+91 7038386679",
+  "phone_alt": "+91 7028573950",
+  "avatar": "assets/me.webp",
+  "resume": "assets/resume.pdf",
+  "social": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/tusharneje-07",
+      "handle": "@tusharneje-07"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/tushar-neje/",
+      "handle": "tushar-neje"
+    },
+    {
+      "platform": "HackerRank",
+      "url": "https://www.hackerrank.com/profile/nejetushar07",
+      "handle": "nejetushar07"
+    },
+    {
+      "platform": "LeetCode",
+      "url": "https://leetcode.com/u/tusharneje/",
+      "handle": "tusharneje"
+    },
+    {
+      "platform": "CodeChef",
+      "url": "https://www.codechef.com/users/nejetushar07",
+      "handle": "nejetushar07"
+    },
+    {
+      "platform": "HackerEarth",
+      "url": "https://www.hackerearth.com/@nejetushar07",
+      "handle": "nejetushar07"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@tusharedits7571",
+      "handle": "@tusharedits7571"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/tushar_neje_07",
+      "handle": "@tushar_neje_07"
+    }
+  ],
+  "languages": ["Marathi", "English", "Hindi"],
+  "whatsapp_url": "https://wa.me/917028573950?text=Hey%20Tushar%2C%20%0AI%20just%20explored%20your%20portfolio%20and%20I%27m%20excited%20to%20team%20up%20on%20something%20awesome.%0ALet%27s%20connect%21",
+  "maps_url": "https://www.google.com/maps?q=16.684278,74.470350"
+}

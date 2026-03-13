@@ -1,0 +1,128 @@
+{
+  "education": [
+    {
+      "id": "edu-viit",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Engineering",
+      "institution": "Vishwakarma Institute of Information Technology (VIIT)",
+      "location": "Kondhawa (Bk), Pune",
+      "period": "2024 – Present",
+      "year_start": 2024,
+      "year_end": null,
+      "status": "pursuing",
+      "description": "Pursuing B.Tech in Computer Engineering. Active in hackathon culture, research publication, and student leadership."
+    },
+    {
+      "id": "edu-dkte-poly",
+      "degree": "Polytechnic Diploma (MSBTE)",
+      "field": "Computer Science and Engineering",
+      "institution": "DKTE's Yashwantrao Chavan Polytechnic",
+      "location": "Ichalkaranji",
+      "period": "2021 – 2024",
+      "year_start": 2021,
+      "year_end": 2024,
+      "status": "completed",
+      "score": "94.00% Aggregate",
+      "score_detail": "91.11% (SY) & 97.06% (TY)",
+      "description": "Graduated with distinction. Held the highest student leadership position (General Secretary) in final year."
+    },
+    {
+      "id": "edu-ssc",
+      "degree": "SSC (Secondary School Certificate)",
+      "field": null,
+      "institution": "Ichalkaranji Highschool Rajwada",
+      "location": "Ichalkaranji",
+      "period": "2021",
+      "year_start": null,
+      "year_end": 2021,
+      "status": "completed",
+      "score": "87%",
+      "description": "Completed SSC Board examination with 87%."
+    }
+  ],
+  "professional": [
+    {
+      "id": "exp-svl",
+      "role": "Full Stack Web Development Intern",
+      "organization": "SVL Automations",
+      "location": "Kolhapur",
+      "type": "internship",
+      "period": "July 2022",
+      "year_start": 2022,
+      "year_end": 2022,
+      "description": "Completed a full-stack web development internship, gaining hands-on experience with web technologies and production workflows.",
+      "highlights": [
+        "Developed and deployed full-stack web features",
+        "Worked with real production codebase",
+        "Gained exposure to industry workflows and client requirements"
+      ]
+    }
+  ],
+  "leadership": [
+    {
+      "id": "lead-president-viit",
+      "role": "President",
+      "organization": "Hackathons VIT",
+      "location": "Pune",
+      "type": "leadership",
+      "period": "2025 – Present",
+      "year_start": 2025,
+      "year_end": null,
+      "description": "Leading the hackathon organizing body at VIIT Pune, responsible for organizing large-scale national-level hackathon events.",
+      "highlights": [
+        "Leading end-to-end hackathon event planning and execution",
+        "Managing a cross-functional organizing team",
+        "Coordinating with sponsors, mentors, and participants"
+      ]
+    },
+    {
+      "id": "lead-tech-cohead",
+      "role": "Technical Co-Head",
+      "organization": "Hackathon VIIT (VIT-K)",
+      "location": "Pune",
+      "type": "leadership",
+      "period": "2024 – 2025",
+      "year_start": 2024,
+      "year_end": 2025,
+      "description": "Served as Technical Co-Head for VIIT's flagship hackathon, overseeing technical operations and participant experience.",
+      "highlights": [
+        "Managed technical infrastructure for hackathon events",
+        "Coordinated judging panels and problem statement design",
+        "Mentored participating teams throughout the event"
+      ]
+    },
+    {
+      "id": "lead-gen-sec",
+      "role": "General Secretary",
+      "organization": "DKTE's Yashwantrao Chavan Polytechnic",
+      "location": "Ichalkaranji",
+      "type": "leadership",
+      "period": "2023 – 2024",
+      "year_start": 2023,
+      "year_end": 2024,
+      "description": "Held the highest student leadership position at DKTE Polytechnic. Responsible for overseeing council activities, coordinating between students and administration, and leading major college events.",
+      "highlights": [
+        "Highest student leadership position in the institution",
+        "Coordinated between student body and administration",
+        "Led major college events and cultural initiatives",
+        "Awarded 'Student of the Year – Best Outgoing Student' for this term"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "id": "award-soty",
+      "title": "Student of the Year – Best Outgoing Student",
+      "organization": "DKTE's Yashwantrao Chavan Polytechnic",
+      "year": "2023–2024",
+      "description": "Awarded for outstanding academic performance, leadership, and contributions to the institution."
+    },
+    {
+      "id": "award-crackers",
+      "title": "1st Rank – Crackers 2.0, Advitya, and Orionet",
+      "organization": "JJMCOE, SIT, DKTE – Kolhapur",
+      "year": "2022–2023",
+      "description": "Secured first rank across three inter-collegiate competitions in the same academic year."
+    }
+  ]
+}

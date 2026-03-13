@@ -1,0 +1,322 @@
+[
+  {
+    "id": "cert-nptel-python",
+    "name": "Python for Data Science",
+    "issuer": "NPTEL",
+    "issuer_type": "nptel",
+    "date": null,
+    "image": "assets/certificates/NPTEL1.webp",
+    "category": "programming",
+    "description": "NPTEL certification in Python for Data Science covering data manipulation, visualization, and analytical libraries."
+  },
+  {
+    "id": "cert-nptel-2",
+    "name": "NPTEL Certification 2",
+    "issuer": "NPTEL",
+    "issuer_type": "nptel",
+    "date": null,
+    "image": "assets/certificates/NPTEL2.webp",
+    "category": "programming",
+    "description": "NPTEL course certification."
+  },
+  {
+    "id": "cert-nptel-3",
+    "name": "NPTEL Certification 3",
+    "issuer": "NPTEL",
+    "issuer_type": "nptel",
+    "date": null,
+    "image": "assets/certificates/NPTEL3.webp",
+    "category": "programming",
+    "description": "NPTEL course certification."
+  },
+  {
+    "id": "cert-android",
+    "name": "Android Development",
+    "issuer": "HackerRank / Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/ANDROID.webp",
+    "category": "development",
+    "description": "Certification in Android application development."
+  },
+  {
+    "id": "cert-cpp",
+    "name": "C++ Programming",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/CPP.webp",
+    "category": "programming",
+    "description": "Certification in C++ programming fundamentals and advanced concepts."
+  },
+  {
+    "id": "cert-dev1",
+    "name": "Web Development Certification 1",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/DEV1.webp",
+    "category": "development",
+    "description": "Web development certification."
+  },
+  {
+    "id": "cert-dev2",
+    "name": "Web Development Certification 2",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/DEV2.webp",
+    "category": "development",
+    "description": "Web development certification."
+  },
+  {
+    "id": "cert-dev3",
+    "name": "Web Development Certification 3",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/DEV3.webp",
+    "category": "development",
+    "description": "Web development certification."
+  },
+  {
+    "id": "cert-dev4",
+    "name": "Web Development Certification 4",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/DEV4.webp",
+    "category": "development",
+    "description": "Web development certification."
+  },
+  {
+    "id": "cert-great1",
+    "name": "Great Learning Certification 1",
+    "issuer": "Great Learning",
+    "issuer_type": "great-learning",
+    "date": null,
+    "image": "assets/certificates/GREAT1.webp",
+    "category": "ai-ml",
+    "description": "Great Learning course certification."
+  },
+  {
+    "id": "cert-great2",
+    "name": "Great Learning Certification 2",
+    "issuer": "Great Learning",
+    "issuer_type": "great-learning",
+    "date": null,
+    "image": "assets/certificates/GREAT2.webp",
+    "category": "ai-ml",
+    "description": "Great Learning course certification."
+  },
+  {
+    "id": "cert-hacker1",
+    "name": "HackerRank Certification 1",
+    "issuer": "HackerRank",
+    "issuer_type": "hackerrank",
+    "date": null,
+    "image": "assets/certificates/HACKER1.webp",
+    "category": "programming",
+    "description": "HackerRank skill certification."
+  },
+  {
+    "id": "cert-hacker2",
+    "name": "HackerRank Certification 2",
+    "issuer": "HackerRank",
+    "issuer_type": "hackerrank",
+    "date": null,
+    "image": "assets/certificates/HACKER2.webp",
+    "category": "programming",
+    "description": "HackerRank skill certification."
+  },
+  {
+    "id": "cert-svl1",
+    "name": "SVL Automations Internship Certificate 1",
+    "issuer": "SVL Automations",
+    "issuer_type": "company",
+    "date": "2022",
+    "image": "assets/certificates/SVL1.webp",
+    "category": "internship",
+    "description": "Certificate from SVL Automations internship program in full-stack web development."
+  },
+  {
+    "id": "cert-svl2",
+    "name": "SVL Automations Internship Certificate 2",
+    "issuer": "SVL Automations",
+    "issuer_type": "company",
+    "date": "2022",
+    "image": "assets/certificates/SVL2.webp",
+    "category": "internship",
+    "description": "Certificate from SVL Automations internship program."
+  },
+  {
+    "id": "cert-udemy",
+    "name": "Udemy Course Certification",
+    "issuer": "Udemy",
+    "issuer_type": "udemy",
+    "date": null,
+    "image": "assets/certificates/UDEMY1.webp",
+    "category": "development",
+    "description": "Udemy course completion certification."
+  },
+  {
+    "id": "cert-ccnc",
+    "name": "CCNA / Networking Certification",
+    "issuer": "Cisco / CCNC",
+    "issuer_type": "cisco",
+    "date": null,
+    "image": "assets/certificates/CCNC_Certificate.webp",
+    "category": "networking",
+    "description": "Cisco networking certification covering network fundamentals and configuration."
+  },
+  {
+    "id": "cert-sap",
+    "name": "SAP Technology Consultant",
+    "issuer": "SAP",
+    "issuer_type": "sap",
+    "date": null,
+    "image": "assets/certificates/SAP_Technology_Consultant.webp",
+    "category": "professional",
+    "description": "SAP Technology Consultant certification covering enterprise resource planning concepts."
+  },
+  {
+    "id": "cert-ml-linear",
+    "name": "Machine Learning – Linear Regression",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Machine_Learning_Linear_Regression.webp",
+    "category": "ai-ml",
+    "description": "Certification in Machine Learning fundamentals with focus on Linear Regression models."
+  },
+  {
+    "id": "cert-positive-leadership",
+    "name": "Positive Leadership",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Positive_Leadership.webp",
+    "category": "leadership",
+    "description": "Certification in positive leadership principles and practices."
+  },
+  {
+    "id": "cert-leadership-plus",
+    "name": "Leadership Plus",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/leadership_plus.webp",
+    "category": "leadership",
+    "description": "Advanced leadership certification."
+  },
+  {
+    "id": "cert-basic-c",
+    "name": "Basic Coding in C",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Basic_Coding_in_C.webp",
+    "category": "programming",
+    "description": "Certification in C programming fundamentals."
+  },
+  {
+    "id": "cert-basic-cpp",
+    "name": "Basic Coding in C++",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Basic_Coding_in_Cpp.webp",
+    "category": "programming",
+    "description": "Certification in C++ programming fundamentals."
+  },
+  {
+    "id": "cert-basic-java",
+    "name": "Basic Coding in Java",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Basic_Coding_in_Java.webp",
+    "category": "programming",
+    "description": "Certification in Java programming fundamentals."
+  },
+  {
+    "id": "cert-basic-python",
+    "name": "Basic Coding in Python",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Basic_Coding_in_Python.webp",
+    "category": "programming",
+    "description": "Certification in Python programming fundamentals."
+  },
+  {
+    "id": "cert-data-interpretation",
+    "name": "Data Interpretation",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Data_Interpretation.webp",
+    "category": "aptitude",
+    "description": "Data interpretation skills certification for competitive examinations."
+  },
+  {
+    "id": "cert-verbal-reasoning",
+    "name": "Verbal Reasoning",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Verbal_Reasoning.webp",
+    "category": "aptitude",
+    "description": "Verbal reasoning skills certification."
+  },
+  {
+    "id": "cert-logical-reasoning",
+    "name": "Logical Reasoning",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Logical_Reasoning.webp",
+    "category": "aptitude",
+    "description": "Logical reasoning skills certification."
+  },
+  {
+    "id": "cert-quants",
+    "name": "Quantitative Aptitude",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Quants_Aptitude.webp",
+    "category": "aptitude",
+    "description": "Quantitative aptitude certification for competitive examinations."
+  },
+  {
+    "id": "cert-visual-reasoning",
+    "name": "Visual Reasoning",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Visual_Reasoning.webp",
+    "category": "aptitude",
+    "description": "Visual reasoning skills certification."
+  },
+  {
+    "id": "cert-group-discussion",
+    "name": "Group Discussion",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/Group_Discussion.webp",
+    "category": "soft-skills",
+    "description": "Group discussion and communication skills certification."
+  },
+  {
+    "id": "cert-hr-preparations",
+    "name": "HR Preparations",
+    "issuer": "Online Platform",
+    "issuer_type": "platform",
+    "date": null,
+    "image": "assets/certificates/HR_Preparations.webp",
+    "category": "soft-skills",
+    "description": "HR interview preparation and professional skills certification."
+  }
+]

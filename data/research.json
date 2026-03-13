@@ -1,0 +1,58 @@
+[
+  {
+    "id": "research-acadx-erp",
+    "title": "Acadx: An Departmental ERP System",
+    "short_title": "Acadx ERP",
+    "authors": ["Tushar Neje", "Neha Patil", "Rushabh Zore", "Runali Ramdurge"],
+    "conference": "IJIRCCE",
+    "conference_full": "International Journal of Innovative Research in Computer and Communication Engineering",
+    "year": 2025,
+    "status": "published",
+    "abstract": "A departmental ERP system for academic institutions enabling automated attendance tracking, score management, digital NOC processing, and AI-powered reporting. Designed to reduce administrative overhead and improve transparency across institutional hierarchies.",
+    "pdf_url": "https://ijircce.com/admin/main/storage/app/pdf/NFeWUCxFGWKnEKH0UdJMokxx8BUEL5Bn3IK2BPB6.pdf",
+    "images": [],
+    "tags": ["ERP", "Django", "Academic Systems", "Web Application"]
+  },
+  {
+    "id": "research-auto-sentinel",
+    "title": "Auto Sentinel: Integrating Driver Behaviour Analysis, Eye-Face Authentication, Emotion Detection, and Anti-Hypnosis Features",
+    "short_title": "Auto Sentinel",
+    "authors": ["Tushar Neje", "Neha Patil", "Sandesh Pol"],
+    "conference": "Publication Pending",
+    "conference_full": "Pending Publication",
+    "year": 2025,
+    "status": "pending",
+    "abstract": "An integrated driver safety system combining real-time driver behaviour analysis, eye-face biometric authentication, emotion detection, and anti-hypnosis alerting to enhance road safety and prevent accidents caused by driver fatigue or distraction.",
+    "pdf_url": null,
+    "images": ["assets/research/auto-sentinel/page-01.webp", "assets/research/auto-sentinel/page-02.webp", "assets/research/auto-sentinel/page-03.webp", "assets/research/auto-sentinel/page-04.webp", "assets/research/auto-sentinel/page-05.webp", "assets/research/auto-sentinel/page-06.webp", "assets/research/auto-sentinel/page-07.webp", "assets/research/auto-sentinel/page-08.webp", "assets/research/auto-sentinel/page-09.webp", "assets/research/auto-sentinel/page-10.webp", "assets/research/auto-sentinel/page-11.webp", "assets/research/auto-sentinel/page-12.webp", "assets/research/auto-sentinel/page-13.webp", "assets/research/auto-sentinel/page-14.webp", "assets/research/auto-sentinel/page-15.webp", "assets/research/auto-sentinel/page-16.webp"],
+    "tags": ["Computer Vision", "Driver Safety", "AI", "Deep Learning", "Biometrics"]
+  },
+  {
+    "id": "research-agrisense",
+    "title": "AgriSense: Smart Agriculture Advisory System",
+    "short_title": "AgriSense",
+    "authors": ["Tushar Neje"],
+    "conference": "SEPM Review",
+    "conference_full": "Software Engineering and Project Management Review Paper",
+    "year": 2024,
+    "status": "review",
+    "abstract": "A smart agriculture advisory system that leverages IoT sensor data and machine learning to provide real-time, context-aware agricultural recommendations to farmers, improving crop yield and resource efficiency.",
+    "pdf_url": null,
+    "images": ["assets/research/agrisense/page-01.webp", "assets/research/agrisense/page-02.webp", "assets/research/agrisense/page-03.webp", "assets/research/agrisense/page-04.webp", "assets/research/agrisense/page-05.webp", "assets/research/agrisense/page-06.webp", "assets/research/agrisense/page-07.webp", "assets/research/agrisense/page-08.webp"],
+    "tags": ["Agriculture", "IoT", "Machine Learning", "Advisory System"]
+  },
+  {
+    "id": "research-smartplate",
+    "title": "SmartPlate: AI-Driven Demand Forecasting & Personalized Nutrition for Non-Funded Canteens",
+    "short_title": "SmartPlate Research",
+    "authors": ["Tushar Neje"],
+    "conference": "Internal Research Report",
+    "conference_full": "Internal Research Report – VIIT Pune",
+    "year": 2025,
+    "status": "report",
+    "abstract": "A comprehensive research paper on applying AI-driven demand forecasting and personalized nutrition recommendation systems to improve the operational efficiency and service quality of non-funded institutional canteens.",
+    "pdf_url": null,
+    "images": ["assets/research/smartplate/page-01.webp", "assets/research/smartplate/page-02.webp", "assets/research/smartplate/page-03.webp", "assets/research/smartplate/page-04.webp", "assets/research/smartplate/page-05.webp", "assets/research/smartplate/page-06.webp", "assets/research/smartplate/page-07.webp", "assets/research/smartplate/page-08.webp"],
+    "tags": ["AI", "Demand Forecasting", "Nutrition", "Canteen Management", "Machine Learning"]
+  }
+]

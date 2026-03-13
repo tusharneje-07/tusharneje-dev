@@ -1,0 +1,93 @@
+{
+  "categories": [
+    {
+      "id": "languages",
+      "label": "Languages",
+      "icon": "code",
+      "skills": [
+        { "name": "Python", "proficiency": 90 },
+        { "name": "JavaScript", "proficiency": 85 },
+        { "name": "TypeScript", "proficiency": 75 },
+        { "name": "HTML5", "proficiency": 90 },
+        { "name": "CSS3", "proficiency": 85 },
+        { "name": "C", "proficiency": 70 },
+        { "name": "C++", "proficiency": 65 },
+        { "name": "Java", "proficiency": 60 },
+        { "name": "PHP", "proficiency": 60 },
+        { "name": "VB.NET", "proficiency": 55 }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "label": "Frameworks & Libraries",
+      "icon": "layers",
+      "skills": [
+        { "name": "Django", "proficiency": 90 },
+        { "name": "FastAPI", "proficiency": 80 },
+        { "name": "Flask", "proficiency": 75 },
+        { "name": "React.js", "proficiency": 80 },
+        { "name": "Tailwind CSS", "proficiency": 90 },
+        { "name": "Bootstrap", "proficiency": 80 },
+        { "name": "Tkinter", "proficiency": 65 }
+      ]
+    },
+    {
+      "id": "databases",
+      "label": "Databases",
+      "icon": "database",
+      "skills": [
+        { "name": "MySQL", "proficiency": 85 },
+        { "name": "MariaDB", "proficiency": 80 },
+        { "name": "SQLite", "proficiency": 80 },
+        { "name": "PostgreSQL", "proficiency": 60 }
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "label": "AI / ML",
+      "icon": "cpu",
+      "skills": [
+        { "name": "AI/ML Model Integration", "proficiency": 80 },
+        { "name": "LLM Integration", "proficiency": 85 },
+        { "name": "Computer Vision", "proficiency": 75 },
+        { "name": "Deep Learning (Keras/TF)", "proficiency": 70 },
+        { "name": "Scikit-Learn", "proficiency": 75 },
+        { "name": "Pandas / NumPy", "proficiency": 80 },
+        { "name": "Prompt Engineering", "proficiency": 85 }
+      ]
+    },
+    {
+      "id": "tools-devops",
+      "label": "Tools & DevOps",
+      "icon": "tool",
+      "skills": [
+        { "name": "Git / GitHub", "proficiency": 90 },
+        { "name": "REST API Development", "proficiency": 85 },
+        { "name": "Docker (Basics)", "proficiency": 55 },
+        { "name": "Postman", "proficiency": 80 },
+        { "name": "VS Code", "proficiency": 90 }
+      ]
+    },
+    {
+      "id": "concepts",
+      "label": "Concepts & Practices",
+      "icon": "book-open",
+      "skills": [
+        { "name": "Full-Stack Web Architecture", "proficiency": 85 },
+        { "name": "System Design & Architecture Planning", "proficiency": 75 },
+        { "name": "ERP System Development", "proficiency": 80 },
+        { "name": "UI/UX Development", "proficiency": 80 },
+        { "name": "Database Design", "proficiency": 80 },
+        { "name": "Feature Planning", "proficiency": 85 },
+        { "name": "API Testing & Debugging", "proficiency": 80 },
+        { "name": "Requirement Analysis", "proficiency": 80 }
+      ]
+    }
+  ],
+  "competitive_coding": [
+    { "platform": "HackerRank", "url": "https://www.hackerrank.com/profile/nejetushar07", "label": "HackerRank" },
+    { "platform": "CodeChef", "url": "https://www.codechef.com/users/nejetushar07", "label": "CodeChef" },
+    { "platform": "HackerEarth", "url": "https://www.hackerearth.com/@nejetushar07", "label": "HackerEarth" },
+    { "platform": "LeetCode", "url": "https://leetcode.com/u/tusharneje/", "label": "LeetCode" }
+  ]
+}
