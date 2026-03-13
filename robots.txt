@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tusharneje-07.github.io/tusharneje-dev/sitemap.xml

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tushar Neje — Full-Stack Developer & AI Builder</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <meta name="description" content="Portfolio of Tushar Neje — Full-Stack Developer and AI Builder from Pune, India." />
 
   <!-- Fonts -->
@@ -191,6 +192,7 @@
       <a href="#skills"     class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Skills</a>
       <a href="#projects"   class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Projects</a>
       <a href="#research"      class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Research</a>
+      <a href="#activities"    class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Activities</a>
       <a href="#certificates"  class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Certs</a>
       <a href="#contact"       class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Contact</a>
     </div>
@@ -231,6 +233,7 @@
   <a href="#skills"     class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Skills</a>
   <a href="#projects"   class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Projects</a>
   <a href="#research"      class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Research</a>
+  <a href="#activities"    class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Activities</a>
   <a href="#certificates"  class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Certificates</a>
   <a href="#contact"       class="mobile-nav-link text-2xl font-display font-semibold py-3"          style="color:var(--text)">Contact</a>
 </div>
@@ -515,6 +518,58 @@
           style="background:var(--surface2);border:1px solid var(--border);color:var(--text)">
           Show all <span id="cert-remaining"></span> more
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ACTIVITIES ══════════════ -->
+  <section id="activities" class="py-20 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="reveal section-label mb-3">Activities</p>
+      <h2 class="reveal reveal-delay-1 section-title mb-4">Hackathons &amp; <span style="color:var(--accent)">Beyond</span></h2>
+      <p class="reveal reveal-delay-2 mb-10 text-base" style="color:var(--muted);max-width:44rem">
+        12+ hackathons and technical competitions across India — plus photography and cricket on the side.
+      </p>
+
+      <!-- Tabs: Hackathons | Extracurricular -->
+      <div class="reveal reveal-delay-3 flex gap-2 mb-8">
+        <button id="act-tab-hack"  class="act-tab px-5 py-1.5 rounded-full text-xs font-display font-semibold transition-all"
+          style="background:var(--accent);color:#000;border:1px solid var(--accent)">Hackathons</button>
+        <button id="act-tab-extra" class="act-tab px-5 py-1.5 rounded-full text-xs font-display font-semibold transition-all"
+          style="background:var(--surface2);color:var(--muted);border:1px solid var(--border)">Extracurricular</button>
+      </div>
+
+      <!-- Skeleton -->
+      <div id="act-skeleton" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div class="skeleton rounded-xl" style="aspect-ratio:4/3"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:4/3"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:4/3"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:4/3"></div>
+      </div>
+
+      <!-- Hackathons grid -->
+      <div id="act-hack-grid"  class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+      <!-- Extracurricular grid -->
+      <div id="act-extra-grid" class="hidden grid grid-cols-1 sm:grid-cols-3 gap-5"></div>
+
+      <!-- Stats row -->
+      <div id="act-stats" class="hidden mt-10 flex flex-wrap gap-4">
+        <div class="flex-1 min-w-[140px] rounded-xl p-5 text-center" style="background:var(--surface);border:1px solid var(--border)">
+          <div class="font-display font-extrabold text-3xl mb-1" style="color:var(--accent)">12+</div>
+          <div class="text-xs" style="color:var(--muted)">Hackathons &amp; Events</div>
+        </div>
+        <div class="flex-1 min-w-[140px] rounded-xl p-5 text-center" style="background:var(--surface);border:1px solid var(--border)">
+          <div class="font-display font-extrabold text-3xl mb-1" style="color:var(--accent)">5+</div>
+          <div class="text-xs" style="color:var(--muted)">Cities Visited</div>
+        </div>
+        <div class="flex-1 min-w-[140px] rounded-xl p-5 text-center" style="background:var(--surface);border:1px solid var(--border)">
+          <div class="font-display font-extrabold text-3xl mb-1" style="color:var(--accent)">1st</div>
+          <div class="text-xs" style="color:var(--muted)">Rank at JJMCOE</div>
+        </div>
+        <div class="flex-1 min-w-[140px] rounded-xl p-5 text-center" style="background:var(--surface);border:1px solid var(--border)">
+          <div class="font-display font-extrabold text-3xl mb-1" style="color:var(--accent)">3</div>
+          <div class="text-xs" style="color:var(--muted)">Extracurricular Activities</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1070,6 +1125,97 @@
         socEl.appendChild(a);
       });
     });
+
+  // ── Activities section ──
+  (function() {
+    const RESULT_BADGE = {
+      '1st Rank': { bg: '#f59e0b', color: '#000', label: '1st' },
+      '2nd Rank': { bg: '#94a3b8', color: '#000', label: '2nd' },
+      '3rd Rank': { bg: '#cd7f32', color: '#fff', label: '3rd' },
+    };
+    const TYPE_ICON = {
+      sports:   `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93 19.07 19.07M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+      creative: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>`,
+    };
+    let activeTab = 'hack';
+    let actData = null;
+
+    function hackCard(h) {
+      const badge = RESULT_BADGE[h.result];
+      return `<div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--bg);transition:transform 0.2s,box-shadow 0.2s"
+        onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)'"
+        onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <div style="position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface2)">
+          <img src="${h.image}" alt="${h.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s"
+            onmouseenter="this.style.transform='scale(1.05)'" onmouseleave="this.style.transform=''"/>
+          ${badge ? `<span style="position:absolute;top:8px;right:8px;padding:2px 8px;border-radius:99px;font-size:0.65rem;font-family:'Syne',sans-serif;font-weight:700;background:${badge.bg};color:${badge.color}">${badge.label}</span>` : ''}
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:6px 8px;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent)">
+            <div style="font-size:0.65rem;color:#fff;font-family:'Syne',sans-serif;font-weight:600;line-height:1.3">${h.organization}</div>
+          </div>
+        </div>
+        <div style="padding:8px 10px">
+          <div style="font-size:0.75rem;font-family:'Syne',sans-serif;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:2px">${h.name}</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:4px">
+            <span style="font-size:0.65rem;color:var(--muted)">${h.location}, ${h.year}</span>
+            ${h.result !== 'Participant' ? `<span style="font-size:0.6rem;padding:1px 6px;border-radius:99px;background:rgba(245,158,11,0.15);color:var(--accent);font-family:'Syne',sans-serif;font-weight:600">${h.result}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }
+
+    function extraCard(e) {
+      const icon = TYPE_ICON[e.type] || '';
+      return `<div style="border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--bg);display:flex;gap:0;transition:transform 0.2s,box-shadow 0.2s"
+        onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)'"
+        onmouseleave="this.style.transform='';this.style.boxShadow=''">
+        <div style="width:180px;min-width:140px;overflow:hidden;flex-shrink:0;background:var(--surface2)">
+          <img src="${e.image}" alt="${e.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;min-height:140px"
+            onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform=''"/>
+        </div>
+        <div style="padding:20px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+          <div style="display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:99px;background:var(--surface2);border:1px solid var(--border);width:fit-content;color:var(--muted)">${icon}<span style="font-size:0.65rem;font-family:'Syne',sans-serif;font-weight:600;text-transform:capitalize">${e.type}</span></div>
+          <div style="font-size:1rem;font-family:'Syne',sans-serif;font-weight:700;color:var(--text)">${e.name}</div>
+          <p style="font-size:0.8rem;color:var(--muted);line-height:1.6">${e.description}</p>
+        </div>
+      </div>`;
+    }
+
+    function renderTab(tab) {
+      activeTab = tab;
+      const hackGrid  = document.getElementById('act-hack-grid');
+      const extraGrid = document.getElementById('act-extra-grid');
+      const hackBtn   = document.getElementById('act-tab-hack');
+      const extraBtn  = document.getElementById('act-tab-extra');
+      if (tab === 'hack') {
+        hackGrid.classList.remove('hidden');  extraGrid.classList.add('hidden');
+        hackBtn.style.background  = 'var(--accent)'; hackBtn.style.color  = '#000'; hackBtn.style.borderColor  = 'var(--accent)';
+        extraBtn.style.background = 'var(--surface2)'; extraBtn.style.color = 'var(--muted)'; extraBtn.style.borderColor = 'var(--border)';
+      } else {
+        extraGrid.classList.remove('hidden'); hackGrid.classList.add('hidden');
+        extraBtn.style.background = 'var(--accent)'; extraBtn.style.color = '#000'; extraBtn.style.borderColor = 'var(--accent)';
+        hackBtn.style.background  = 'var(--surface2)'; hackBtn.style.color  = 'var(--muted)'; hackBtn.style.borderColor  = 'var(--border)';
+      }
+    }
+
+    document.getElementById('act-tab-hack').addEventListener('click',  () => renderTab('hack'));
+    document.getElementById('act-tab-extra').addEventListener('click', () => renderTab('extra'));
+
+    fetch('data/activities.json')
+      .then(r => r.json())
+      .then(data => {
+        actData = data;
+        document.getElementById('act-skeleton').style.display = 'none';
+        const hackGrid  = document.getElementById('act-hack-grid');
+        const extraGrid = document.getElementById('act-extra-grid');
+        const statsEl   = document.getElementById('act-stats');
+        hackGrid.innerHTML  = (data.hackathons || []).map(hackCard).join('');
+        extraGrid.innerHTML = (data.extracurricular || []).map(extraCard).join('');
+        hackGrid.classList.remove('hidden');
+        statsEl.classList.remove('hidden');
+        statsEl.style.display = 'flex';
+      })
+      .catch(() => { document.getElementById('act-skeleton').style.display = 'none'; });
+  })();
 
   // ── Certificates section ──
   (function() {

@@ -2,166 +2,166 @@
   {
     "id": "cert-nptel-python",
     "name": "Python for Data Science",
-    "issuer": "NPTEL",
+    "issuer": "NPTEL – IIT Madras",
     "issuer_type": "nptel",
-    "date": null,
+    "date": "Jan–Feb 2023",
     "image": "assets/certificates/NPTEL1.webp",
     "category": "programming",
-    "description": "NPTEL certification in Python for Data Science covering data manipulation, visualization, and analytical libraries."
+    "description": "NPTEL Elite certification in Python for Data Science (4-week course). Score: 60%. Funded by MoE, Govt. of India."
   },
   {
-    "id": "cert-nptel-2",
-    "name": "NPTEL Certification 2",
-    "issuer": "NPTEL",
+    "id": "cert-nptel-ethical-hacking",
+    "name": "Ethical Hacking",
+    "issuer": "NPTEL – IIT Kharagpur",
     "issuer_type": "nptel",
-    "date": null,
+    "date": "Jul–Oct 2023",
     "image": "assets/certificates/NPTEL2.webp",
     "category": "programming",
-    "description": "NPTEL course certification."
+    "description": "NPTEL Elite certification in Ethical Hacking (12-week course). Score: 69%. Funded by MoE, Govt. of India."
   },
   {
-    "id": "cert-nptel-3",
-    "name": "NPTEL Certification 3",
-    "issuer": "NPTEL",
+    "id": "cert-nptel-security",
+    "name": "Systems and Usable Security",
+    "issuer": "NPTEL – IIT Indore",
     "issuer_type": "nptel",
-    "date": null,
+    "date": "Jan–Feb 2024",
     "image": "assets/certificates/NPTEL3.webp",
     "category": "programming",
-    "description": "NPTEL course certification."
+    "description": "NPTEL Elite certification in Systems and Usable Security (4-week course). Score: 66%. Funded by MoE, Govt. of India."
   },
   {
     "id": "cert-android",
-    "name": "Android Development",
-    "issuer": "HackerRank / Online Platform",
-    "issuer_type": "platform",
-    "date": null,
+    "name": "Android App Development Workshop",
+    "issuer": "MSME-PPDC, Govt. of India",
+    "issuer_type": "government",
+    "date": "Mar 2023",
     "image": "assets/certificates/ANDROID.webp",
     "category": "development",
-    "description": "Certification in Android application development."
+    "description": "Workshop on Android App Development conducted at Kolhapur (23–25 Mar 2023) by MSME Technology Development Centre, Agra."
   },
   {
     "id": "cert-cpp",
-    "name": "C++ Programming",
-    "issuer": "Online Platform",
-    "issuer_type": "platform",
-    "date": null,
+    "name": "Certificate Course in C++ Programming",
+    "issuer": "DiSHA Computer Institute",
+    "issuer_type": "institute",
+    "date": "Aug 2022",
     "image": "assets/certificates/CPP.webp",
     "category": "programming",
-    "description": "Certification in C++ programming fundamentals and advanced concepts."
+    "description": "ISO 9001:2008 certified course in C++ Programming. Score: 100/100. DiSHA Computer Institute, Ichalkaranji."
   },
   {
     "id": "cert-dev1",
-    "name": "Web Development Certification 1",
-    "issuer": "Online Platform",
+    "name": "Front-End Web Dev Bootcamp – JS & React.js",
+    "issuer": "DevTown / DSC / Microsoft Learn",
     "issuer_type": "platform",
-    "date": null,
+    "date": "Nov 2022",
     "image": "assets/certificates/DEV1.webp",
     "category": "development",
-    "description": "Web development certification."
+    "description": "7-day bootcamp on Front-End Web Development using JavaScript and React.js. Certificates from DevTown, Developer Student Clubs, and Microsoft Learn Student Ambassador program."
   },
   {
     "id": "cert-dev2",
-    "name": "Web Development Certification 2",
-    "issuer": "Online Platform",
+    "name": "Back-End Web Dev Bootcamp – JS & Node.js",
+    "issuer": "DevTown / DSC / Microsoft Learn",
     "issuer_type": "platform",
-    "date": null,
+    "date": "Nov 2022",
     "image": "assets/certificates/DEV2.webp",
     "category": "development",
-    "description": "Web development certification."
+    "description": "7-day bootcamp on Back-End Web Development using JavaScript and Node.js. Certificates from DevTown, Developer Student Clubs, and Microsoft Learn Student Ambassador program."
   },
   {
     "id": "cert-dev3",
-    "name": "Web Development Certification 3",
-    "issuer": "Online Platform",
+    "name": "Instagram Clone Bootcamp – HTML & CSS",
+    "issuer": "DevTown / DSC / Microsoft Learn",
     "issuer_type": "platform",
-    "date": null,
+    "date": "Dec 2022",
     "image": "assets/certificates/DEV3.webp",
     "category": "development",
-    "description": "Web development certification."
+    "description": "7-day bootcamp on building an Instagram Clone Using HTML & CSS. Certificates from DevTown, Developer Student Clubs, and Microsoft Learn Student Ambassador program."
   },
   {
     "id": "cert-dev4",
-    "name": "Web Development Certification 4",
-    "issuer": "Online Platform",
+    "name": "Python and Artificial Intelligence Bootcamp",
+    "issuer": "DevTown / DSC / Microsoft Learn",
     "issuer_type": "platform",
-    "date": null,
+    "date": "Jul 2023",
     "image": "assets/certificates/DEV4.webp",
-    "category": "development",
-    "description": "Web development certification."
+    "category": "ai-ml",
+    "description": "7-day bootcamp on Python and Artificial Intelligence. Certificates from DevTown, Developer Student Clubs, Microsoft Learn Student Ambassador, and Builders program."
   },
   {
     "id": "cert-great1",
-    "name": "Great Learning Certification 1",
-    "issuer": "Great Learning",
+    "name": "Java Programming",
+    "issuer": "Great Learning Academy",
     "issuer_type": "great-learning",
-    "date": null,
+    "date": "Apr 2023",
     "image": "assets/certificates/GREAT1.webp",
-    "category": "ai-ml",
-    "description": "Great Learning course certification."
+    "category": "programming",
+    "description": "Free online course certification in Java Programming from Great Learning Academy."
   },
   {
     "id": "cert-great2",
-    "name": "Great Learning Certification 2",
-    "issuer": "Great Learning",
+    "name": "HTML in Hindi",
+    "issuer": "Great Learning Academy",
     "issuer_type": "great-learning",
-    "date": null,
+    "date": "Mar 2023",
     "image": "assets/certificates/GREAT2.webp",
-    "category": "ai-ml",
-    "description": "Great Learning course certification."
+    "category": "development",
+    "description": "Free online course certification in HTML (in Hindi) from Great Learning Academy."
   },
   {
     "id": "cert-hacker1",
-    "name": "HackerRank Certification 1",
+    "name": "Python (Basic) – Skill Assessment",
     "issuer": "HackerRank",
     "issuer_type": "hackerrank",
-    "date": null,
+    "date": "Dec 2023",
     "image": "assets/certificates/HACKER1.webp",
     "category": "programming",
-    "description": "HackerRank skill certification."
+    "description": "HackerRank skill certificate for passing the Python (Basic) assessment. ID: D0FD2D91057D."
   },
   {
     "id": "cert-hacker2",
-    "name": "HackerRank Certification 2",
+    "name": "SQL (Basic) – Skill Assessment",
     "issuer": "HackerRank",
     "issuer_type": "hackerrank",
-    "date": null,
+    "date": "Dec 2023",
     "image": "assets/certificates/HACKER2.webp",
     "category": "programming",
-    "description": "HackerRank skill certification."
+    "description": "HackerRank skill certificate for passing the SQL (Basic) assessment. ID: DF781FFF5DA9."
   },
   {
     "id": "cert-svl1",
-    "name": "SVL Automations Internship Certificate 1",
+    "name": "Full-Stack Web Development Internship",
     "issuer": "SVL Automations",
     "issuer_type": "company",
     "date": "2022",
     "image": "assets/certificates/SVL1.webp",
     "category": "internship",
-    "description": "Certificate from SVL Automations internship program in full-stack web development."
+    "description": "Internship completion certificate from SVL Automations in full-stack web development."
   },
   {
     "id": "cert-svl2",
-    "name": "SVL Automations Internship Certificate 2",
+    "name": "Internship Certificate of Appreciation",
     "issuer": "SVL Automations",
     "issuer_type": "company",
     "date": "2022",
     "image": "assets/certificates/SVL2.webp",
     "category": "internship",
-    "description": "Certificate from SVL Automations internship program."
+    "description": "Certificate of appreciation from SVL Automations internship program."
   },
   {
     "id": "cert-udemy",
-    "name": "Udemy Course Certification",
-    "issuer": "Udemy",
+    "name": "JavaScript And PHP Programming Complete Course",
+    "issuer": "Udemy – Proper Dot Institute",
     "issuer_type": "udemy",
-    "date": null,
+    "date": "Feb 2023",
     "image": "assets/certificates/UDEMY1.webp",
     "category": "development",
-    "description": "Udemy course completion certification."
+    "description": "5-hour Udemy course completion certificate for JavaScript And PHP Programming Complete Course by Proper Dot Institute."
   },
   {
     "id": "cert-ccnc",
-    "name": "CCNA / Networking Certification",
+    "name": "CCNA – Networking Fundamentals",
     "issuer": "Cisco / CCNC",
     "issuer_type": "cisco",
     "date": null,
@@ -301,7 +301,7 @@
   },
   {
     "id": "cert-group-discussion",
-    "name": "Group Discussion",
+    "name": "Group Discussion Skills",
     "issuer": "Online Platform",
     "issuer_type": "platform",
     "date": null,
@@ -311,7 +311,7 @@
   },
   {
     "id": "cert-hr-preparations",
-    "name": "HR Preparations",
+    "name": "HR Interview Preparation",
     "issuer": "Online Platform",
     "issuer_type": "platform",
     "date": null,
