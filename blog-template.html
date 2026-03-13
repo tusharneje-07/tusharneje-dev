@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Blog — Tushar Neje</title>
+  <meta name="description" id="page-desc" content="Blog post by Tushar Neje" />
+  <!-- Open Graph -->
+  <meta property="og:title"       id="og-title"       content="Blog — Tushar Neje" />
+  <meta property="og:description" id="og-desc"        content="Blog post by Tushar Neje" />
+  <meta property="og:image"       id="og-image"       content="" />
+  <meta property="og:type"        content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['attribute', '[data-theme="dark"]'],
+      theme: { extend: { fontFamily: { display: ['Syne','sans-serif'], body: ['DM Sans','sans-serif'] } } }
+    };
+  </script>
+  <style>
+    :root { --bg:#0c0c0d; --surface:#141415; --surface2:#1c1c1e; --border:rgba(255,255,255,0.07); --text:#f0ede8; --muted:#8a8a8e; --accent:#f59e0b; }
+    [data-theme="light"] { --bg:#fafaf9; --surface:#f3f3f1; --surface2:#e8e8e5; --border:rgba(0,0,0,0.08); --text:#1a1a1a; --muted:#6b6b6b; --accent:#d97706; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s;}
+    .dot-grid{background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:28px 28px;}
+    [data-theme="light"] .dot-grid{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.3s,backdrop-filter 0.3s;}
+    #navbar.scrolled{background:rgba(12,12,13,0.80);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    [data-theme="light"] #navbar.scrolled{background:rgba(250,250,249,0.80);}
+    .skeleton{background:linear-gradient(90deg,var(--surface) 25%,var(--surface2) 50%,var(--surface) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px;}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .ham-line{display:block;width:22px;height:2px;background:var(--text);transition:transform 0.3s,opacity 0.3s;transform-origin:center;}
+    .ham-open .ham-line:nth-child(1){transform:translateY(6px) rotate(45deg);}
+    .ham-open .ham-line:nth-child(2){opacity:0;}
+    .ham-open .ham-line:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+    #mobile-nav{display:none;position:fixed;inset:0;z-index:99;background:var(--bg);padding:5rem 2rem 2rem;flex-direction:column;gap:0.5rem;}
+    #mobile-nav.open{display:flex;}
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-track{background:var(--bg);}
+    ::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:99px;}
+
+    /* Reading progress bar */
+    #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;transition:width 0.1s linear;width:0%;}
+
+    /* Article prose styles */
+    .prose{line-height:1.85;font-size:1.0625rem;}
+    .prose h1,.prose h2,.prose h3,.prose h4{font-family:'Syne',sans-serif;font-weight:700;color:var(--text);margin-top:2.2em;margin-bottom:0.6em;line-height:1.25;}
+    .prose h2{font-size:1.5rem;padding-bottom:0.4em;border-bottom:1px solid var(--border);}
+    .prose h3{font-size:1.2rem;}
+    .prose h4{font-size:1rem;letter-spacing:0.02em;}
+    .prose p{margin-bottom:1.25em;color:var(--text);}
+    .prose a{color:var(--accent);text-underline-offset:3px;}
+    .prose a:hover{opacity:0.8;}
+    .prose strong{font-weight:600;color:var(--text);}
+    .prose em{font-style:italic;}
+    .prose ul,.prose ol{margin:1em 0 1.25em 1.4em;color:var(--text);}
+    .prose li{margin-bottom:0.4em;}
+    .prose blockquote{margin:1.5em 0;padding:1em 1.25em;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;font-style:italic;color:var(--muted);}
+    .prose blockquote p{margin:0;color:var(--muted);}
+    .prose code{font-family:'Courier New',monospace;font-size:0.875em;padding:0.15em 0.4em;border-radius:4px;background:var(--surface2);color:var(--accent);}
+    .prose pre{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;overflow-x:auto;margin:1.5em 0;}
+    .prose pre code{background:none;padding:0;color:var(--text);font-size:0.875rem;line-height:1.7;}
+    .prose hr{border:none;border-top:1px solid var(--border);margin:2.5em 0;}
+    .prose img{max-width:100%;border-radius:10px;margin:1.5em 0;border:1px solid var(--border);}
+    .prose table{width:100%;border-collapse:collapse;margin:1.5em 0;font-size:0.9rem;}
+    .prose th{text-align:left;font-family:'Syne',sans-serif;font-weight:600;padding:0.6em 0.8em;border-bottom:2px solid var(--border);color:var(--text);}
+    .prose td{padding:0.6em 0.8em;border-bottom:1px solid var(--border);color:var(--muted);}
+    .prose tr:last-child td{border-bottom:none;}
+
+    /* Tag chip */
+    .tag-chip{display:inline-block;padding:3px 10px;border-radius:99px;font-size:0.7rem;background:var(--surface2);color:var(--muted);border:1px solid var(--border);}
+
+    /* Copy code button */
+    .code-block-wrap{position:relative;}
+    .copy-btn{position:absolute;top:0.6rem;right:0.75rem;font-size:0.7rem;font-family:'DM Sans',sans-serif;padding:3px 9px;border-radius:5px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:color 0.2s;}
+    .copy-btn:hover{color:var(--accent);}
+    .copy-btn.copied{color:var(--accent);}
+
+    /* TOC sidebar */
+    .toc-item{display:block;font-size:0.82rem;padding:0.25em 0.5em 0.25em 0.75em;border-left:2px solid var(--border);color:var(--muted);text-decoration:none;transition:color 0.2s,border-color 0.2s;margin-bottom:0.15em;}
+    .toc-item:hover,.toc-item.active{color:var(--accent);border-left-color:var(--accent);}
+    .toc-item.h3{padding-left:1.5rem;font-size:0.78rem;}
+
+    /* Fade in */
+    .fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+  </style>
+</head>
+<body>
+
+<!-- Reading progress -->
+<div id="progress-bar"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html#hero" class="font-display font-bold text-lg tracking-tight" style="color:var(--text)">Tushar<span style="color:var(--accent)">.</span></a>
+    <div class="hidden md:flex items-center gap-1">
+      <a href="index.html#about"      class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">About</a>
+      <a href="blog.html"             class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--accent)">Blog</a>
+      <a href="index.html#experience" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">Experience</a>
+      <a href="index.html#skills"     class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">Skills</a>
+      <a href="index.html#projects"   class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">Projects</a>
+      <a href="index.html#research"   class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">Research</a>
+      <a href="index.html#contact"    class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">Contact</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" aria-label="Toggle theme" class="w-9 h-9 rounded-full flex items-center justify-center" style="background:var(--surface);border:1px solid var(--border)">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted)"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--muted);display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button id="ham-btn" aria-label="Toggle menu" class="md:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-[5px]" style="background:var(--surface);border:1px solid var(--border)">
+        <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-nav" role="dialog">
+  <a href="index.html#about"      class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">About</a>
+  <a href="blog.html"             class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--accent);border-color:var(--border)">Blog</a>
+  <a href="index.html#experience" class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Experience</a>
+  <a href="index.html#skills"     class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Skills</a>
+  <a href="index.html#projects"   class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Projects</a>
+  <a href="index.html#research"   class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Research</a>
+  <a href="index.html#contact"    class="mobile-nav-link text-2xl font-display font-semibold py-3"          style="color:var(--text)">Contact</a>
+</div>
+
+<main class="pt-16">
+  <!-- SKELETON STATE -->
+  <div id="skeleton-state">
+    <div class="dot-grid py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="skeleton h-4 w-24 mb-6 rounded"></div>
+        <div class="skeleton h-10 w-3/4 mb-4 rounded"></div>
+        <div class="skeleton h-10 w-1/2 mb-8 rounded"></div>
+        <div class="flex gap-4">
+          <div class="skeleton h-4 w-20 rounded"></div>
+          <div class="skeleton h-4 w-20 rounded"></div>
+          <div class="skeleton h-4 w-28 rounded"></div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="skeleton h-4 w-full mb-3 rounded"></div>
+      <div class="skeleton h-4 w-5/6 mb-3 rounded"></div>
+      <div class="skeleton h-4 w-4/5 mb-3 rounded"></div>
+      <div class="skeleton h-4 w-full mb-3 rounded"></div>
+      <div class="skeleton h-4 w-3/4 mb-8 rounded"></div>
+      <div class="skeleton h-32 mb-8 rounded-xl"></div>
+      <div class="skeleton h-4 w-full mb-3 rounded"></div>
+      <div class="skeleton h-4 w-5/6 mb-3 rounded"></div>
+      <div class="skeleton h-4 w-full mb-3 rounded"></div>
+    </div>
+  </div>
+
+  <!-- NOT FOUND STATE -->
+  <div id="not-found-state" class="hidden flex-col items-center justify-center py-32 text-center px-4">
+    <div style="width:80px;height:80px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </div>
+    <h1 class="font-display font-bold text-2xl mb-2" style="color:var(--text)">Post Not Found</h1>
+    <p class="text-sm mb-6 max-w-xs" style="color:var(--muted)">This blog post doesn't exist or may have been removed.</p>
+    <a href="blog.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold font-display" style="background:var(--accent);color:#000">
+      ← Back to Blog
+    </a>
+  </div>
+
+  <!-- ARTICLE STATE -->
+  <article id="article-state" class="hidden">
+
+    <!-- Hero banner -->
+    <div id="article-hero" class="dot-grid py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-5 flex items-center gap-2 text-xs" style="color:var(--muted)">
+          <a href="index.html" class="hover:opacity-80 transition-opacity" style="color:var(--muted)">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <a href="blog.html" class="hover:opacity-80 transition-opacity" style="color:var(--muted)">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span id="breadcrumb-title" style="color:var(--text)">Post</span>
+        </nav>
+
+        <!-- Tags -->
+        <div id="article-tags" class="flex flex-wrap gap-2 mb-5"></div>
+
+        <!-- Title -->
+        <h1 id="article-title" class="font-display font-extrabold mb-4" style="font-size:clamp(1.75rem,5vw,3rem);line-height:1.15;color:var(--text)"></h1>
+
+        <!-- Excerpt -->
+        <p id="article-excerpt" class="text-base md:text-lg mb-6" style="color:var(--muted)"></p>
+
+        <!-- Meta row -->
+        <div class="flex flex-wrap items-center gap-4 text-sm" style="color:var(--muted)">
+          <div class="flex items-center gap-2">
+            <img src="assets/me.webp" alt="Tushar Neje" class="w-7 h-7 rounded-full object-cover" style="border:1px solid var(--border)" />
+            <span style="color:var(--text)" class="font-medium">Tushar Neje</span>
+          </div>
+          <span id="article-date"></span>
+          <span id="article-read-time" class="flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="read-time-text"></span>
+          </span>
+          <!-- Share button -->
+          <button id="share-btn" class="ml-auto flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg transition-colors" style="background:var(--surface);border:1px solid var(--border);color:var(--muted)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cover image -->
+    <div id="cover-wrap" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-0">
+      <img id="article-cover" src="" alt="" class="w-full object-cover rounded-xl" style="max-height:420px;border:1px solid var(--border)" />
+    </div>
+
+    <!-- Main layout: article + TOC sidebar -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex gap-12 items-start">
+
+      <!-- Article body -->
+      <div class="flex-1 min-w-0">
+        <div id="article-body" class="prose max-w-none fade-in"></div>
+
+        <!-- Divider -->
+        <hr style="border-color:var(--border);margin:3rem 0" />
+
+        <!-- Tags footer -->
+        <div class="mb-8">
+          <p class="text-xs font-display font-semibold tracking-widest uppercase mb-3" style="color:var(--muted)">Tags</p>
+          <div id="article-tags-footer" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Share row -->
+        <div class="rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8" style="background:var(--surface);border:1px solid var(--border)">
+          <div class="flex-1">
+            <p class="font-display font-semibold text-sm mb-1" style="color:var(--text)">Found this useful?</p>
+            <p class="text-xs" style="color:var(--muted)">Share it with someone who might enjoy it.</p>
+          </div>
+          <div class="flex gap-2">
+            <a id="share-twitter" href="#" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);text-decoration:none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.74-8.851L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X / Twitter
+            </a>
+            <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);text-decoration:none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold font-display transition-opacity hover:opacity-70" style="color:var(--accent)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          All Articles
+        </a>
+      </div>
+
+      <!-- TOC sidebar (desktop only) -->
+      <aside id="toc-sidebar" class="hidden lg:block w-56 shrink-0 sticky top-24">
+        <p class="text-xs font-display font-semibold tracking-widest uppercase mb-3" style="color:var(--muted)">On this page</p>
+        <nav id="toc-nav" aria-label="Table of contents"></nav>
+        <!-- Progress -->
+        <div class="mt-6 pt-4" style="border-top:1px solid var(--border)">
+          <p class="text-xs mb-2" style="color:var(--muted)">Reading progress</p>
+          <div class="h-1 rounded-full overflow-hidden" style="background:var(--surface2)">
+            <div id="toc-progress" class="h-full rounded-full" style="background:var(--accent);width:0%;transition:width 0.1s linear"></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+</main>
+
+<footer class="py-8" style="border-top:1px solid var(--border)">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <p class="text-sm" style="color:var(--muted)">© 2026 Tushar Neje.</p>
+    <a href="blog.html" class="text-sm font-display font-semibold" style="color:var(--accent)">← All Articles</a>
+  </div>
+</footer>
+
+<script>
+// ─── Theme ───────────────────────────────────────────────────────────────────
+const html = document.documentElement;
+function applyTheme(t) {
+  html.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  document.getElementById('icon-sun').style.display  = t === 'dark' ? '' : 'none';
+  document.getElementById('icon-moon').style.display = t === 'dark' ? 'none' : '';
+}
+applyTheme(localStorage.getItem('theme') || 'dark');
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+// ─── Navbar scroll ────────────────────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+
+// ─── Hamburger ────────────────────────────────────────────────────────────────
+const hamBtn = document.getElementById('ham-btn');
+const mobileNav = document.getElementById('mobile-nav');
+hamBtn.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  hamBtn.classList.toggle('ham-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => {
+  mobileNav.classList.remove('open'); hamBtn.classList.remove('ham-open'); document.body.style.overflow = '';
+}));
+
+// ─── Nav hover ────────────────────────────────────────────────────────────────
+document.querySelectorAll('.nav-link').forEach(l => {
+  l.addEventListener('mouseenter', () => { if (l.style.color !== 'var(--accent)') l.style.color = 'var(--text)'; });
+  l.addEventListener('mouseleave', () => { if (l.style.color !== 'var(--accent)') l.style.color = 'var(--muted)'; });
+});
+
+// ─── Reading progress ─────────────────────────────────────────────────────────
+const progressBar  = document.getElementById('progress-bar');
+const tocProgress  = document.getElementById('toc-progress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+  const pctStr = pct.toFixed(1) + '%';
+  progressBar.style.width = pctStr;
+  if (tocProgress) tocProgress.style.width = pctStr;
+}, { passive: true });
+
+// ─── Lightweight markdown-to-HTML renderer ────────────────────────────────────
+function renderMarkdown(md) {
+  if (!md) return '';
+  let html = md
+    // Escape HTML special chars first (basic)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+    // Fenced code blocks ```lang\n...\n```
+    .replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
+      const id = 'code-' + Math.random().toString(36).slice(2);
+      return `<div class="code-block-wrap"><pre><code id="${id}">${code.trim()}</code></pre><button class="copy-btn" data-target="${id}">Copy</button></div>`;
+    })
+
+    // Horizontal rule ---
+    .replace(/^---$/gm, '<hr>')
+
+    // Headings (must be after code blocks)
+    .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+
+    // Blockquote
+    .replace(/^> (.+)$/gm, '<blockquote><p>$1</p></blockquote>')
+
+    // Unordered list lines (basic, single level)
+    .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
+    // Ordered list lines
+    .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+
+    // Bold + italic
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    // Bold
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    // Italic
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // Strikethrough
+    .replace(/~~(.+?)~~/g, '<del>$1</del>')
+    // Inline code
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+
+    // Images
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
+
+    // Wrap consecutive <li> in <ul>
+    .replace(/(<li>[\s\S]+?<\/li>)(?!\s*<li>)/g, (match) => '<ul>' + match + '</ul>');
+
+  // Wrap bare text lines in <p>
+  const lines = html.split('\n');
+  const out = [];
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    if (!line || line.startsWith('<h') || line.startsWith('<ul') || line.startsWith('<ol')
+        || line.startsWith('<blockquote') || line.startsWith('<pre') || line.startsWith('<hr')
+        || line.startsWith('<div') || line.startsWith('<img')) {
+      out.push(line);
+    } else if (!line.startsWith('<')) {
+      out.push('<p>' + line + '</p>');
+    } else {
+      out.push(line);
+    }
+    i++;
+  }
+  return out.join('\n');
+}
+
+// ─── Table of contents builder ────────────────────────────────────────────────
+function buildTOC(bodyEl) {
+  const tocNav = document.getElementById('toc-nav');
+  if (!tocNav) return;
+  const headings = bodyEl.querySelectorAll('h2, h3');
+  if (headings.length < 2) { document.getElementById('toc-sidebar').style.display = 'none'; return; }
+  document.getElementById('toc-sidebar').classList.remove('hidden');
+  document.getElementById('toc-sidebar').style.display = '';
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'heading-' + i;
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.className = 'toc-item' + (h.tagName === 'H3' ? ' h3' : '');
+    a.textContent = h.textContent;
+    tocNav.appendChild(a);
+  });
+
+  // Highlight active heading on scroll
+  const tocLinks = tocNav.querySelectorAll('.toc-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const active = tocNav.querySelector(`[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  headings.forEach(h => observer.observe(h));
+}
+
+// ─── Reading time ─────────────────────────────────────────────────────────────
+function calcReadTime(text) {
+  const words = text.trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  return mins + ' min read';
+}
+
+// ─── Share helpers ────────────────────────────────────────────────────────────
+function setupShare(title) {
+  const url = encodeURIComponent(window.location.href);
+  const t   = encodeURIComponent(title + ' — Tushar Neje');
+  document.getElementById('share-twitter').href  = `https://twitter.com/intent/tweet?text=${t}&url=${url}`;
+  document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  document.getElementById('share-btn').addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({ title, url: window.location.href }); } catch (_) {}
+    } else {
+      await navigator.clipboard.writeText(window.location.href);
+      const btn = document.getElementById('share-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share`; }, 2000);
+    }
+  });
+}
+
+// ─── Copy code button ─────────────────────────────────────────────────────────
+function setupCopyButtons() {
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      try {
+        await navigator.clipboard.writeText(target.textContent);
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      } catch (_) {}
+    });
+  });
+}
+
+// ─── Show/hide states ─────────────────────────────────────────────────────────
+function showArticle() {
+  document.getElementById('skeleton-state').style.display = 'none';
+  document.getElementById('not-found-state').style.display = 'none';
+  document.getElementById('article-state').classList.remove('hidden');
+  document.getElementById('article-state').style.display = '';
+}
+function showNotFound() {
+  document.getElementById('skeleton-state').style.display = 'none';
+  document.getElementById('not-found-state').classList.remove('hidden');
+  document.getElementById('not-found-state').style.display = 'flex';
+}
+
+// ─── Render article ───────────────────────────────────────────────────────────
+function renderArticle(post) {
+  // Meta
+  document.getElementById('page-title').textContent    = post.title + ' — Tushar Neje';
+  document.getElementById('page-desc').content          = post.excerpt || '';
+  document.getElementById('og-title').content           = post.title;
+  document.getElementById('og-desc').content            = post.excerpt || '';
+  if (post.cover) document.getElementById('og-image').content = post.cover;
+
+  // Breadcrumb
+  document.getElementById('breadcrumb-title').textContent = post.title.length > 40
+    ? post.title.slice(0, 40) + '…' : post.title;
+
+  // Tags
+  const tagsHTML = (post.tags || []).map(t =>
+    `<span class="tag-chip">${t}</span>`).join('');
+  document.getElementById('article-tags').innerHTML        = tagsHTML;
+  document.getElementById('article-tags-footer').innerHTML = tagsHTML;
+
+  // Title & excerpt
+  document.getElementById('article-title').textContent   = post.title;
+  document.getElementById('article-excerpt').textContent = post.excerpt || '';
+
+  // Date
+  document.getElementById('article-date').textContent = post.date
+    ? new Date(post.date).toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' })
+    : '';
+
+  // Cover image
+  if (post.cover) {
+    document.getElementById('cover-wrap').classList.remove('hidden');
+    document.getElementById('article-cover').src = post.cover;
+    document.getElementById('article-cover').alt = post.title;
+  }
+
+  // Body
+  const bodyEl = document.getElementById('article-body');
+  const rawContent = post.content || post.body || '';
+  bodyEl.innerHTML = renderMarkdown(rawContent);
+
+  // Read time
+  document.getElementById('read-time-text').textContent = calcReadTime(
+    rawContent.replace(/[#*`>\-]/g, '').trim()
+  );
+
+  // TOC
+  buildTOC(bodyEl);
+
+  // Copy buttons
+  setupCopyButtons();
+
+  // Share
+  setupShare(post.title);
+
+  // Fade-in animation
+  setTimeout(() => bodyEl.classList.add('visible'), 80);
+
+  showArticle();
+}
+
+// ─── Bootstrap ────────────────────────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const postId = params.get('id');
+
+if (!postId) {
+  showNotFound();
+} else {
+  fetch('data/blogs.json')
+    .then(r => r.json())
+    .then(blogs => {
+      const post = blogs.find(b => String(b.id) === String(postId));
+      if (!post) { showNotFound(); return; }
+      renderArticle(post);
+    })
+    .catch(() => showNotFound());
+}
+</script>
+</body>
+</html>

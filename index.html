@@ -190,8 +190,9 @@
       <a href="#experience" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Experience</a>
       <a href="#skills"     class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Skills</a>
       <a href="#projects"   class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Projects</a>
-      <a href="#research"   class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Research</a>
-      <a href="#contact"    class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Contact</a>
+      <a href="#research"      class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Research</a>
+      <a href="#certificates"  class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Certs</a>
+      <a href="#contact"       class="nav-link px-3 py-1.5 rounded-md text-sm font-medium transition-colors" style="color:var(--muted)">Contact</a>
     </div>
 
     <!-- Right controls -->
@@ -229,8 +230,9 @@
   <a href="#experience" class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Experience</a>
   <a href="#skills"     class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Skills</a>
   <a href="#projects"   class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Projects</a>
-  <a href="#research"   class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Research</a>
-  <a href="#contact"    class="mobile-nav-link text-2xl font-display font-semibold py-3"          style="color:var(--text)">Contact</a>
+  <a href="#research"      class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Research</a>
+  <a href="#certificates"  class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text); border-color:var(--border)">Certificates</a>
+  <a href="#contact"       class="mobile-nav-link text-2xl font-display font-semibold py-3"          style="color:var(--text)">Contact</a>
 </div>
 
 <!-- ══════════════ MAIN CONTENT ══════════════ -->
@@ -481,6 +483,41 @@
     style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);overflow-y:auto">
     <div id="research-modal-inner" class="max-w-2xl mx-auto my-10 mx-4 rounded-2xl overflow-hidden" style="background:var(--bg);border:1px solid var(--border)"></div>
   </div>
+
+  <!-- ══════════════ CERTIFICATES ══════════════ -->
+  <section id="certificates" class="py-20 md:py-32" style="background:var(--surface)">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="reveal section-label mb-3">Certificates</p>
+      <h2 class="reveal reveal-delay-1 section-title mb-4">Courses &amp; <span style="color:var(--accent)">Certifications</span></h2>
+      <p class="reveal reveal-delay-2 mb-10 text-base" style="color:var(--muted);max-width:44rem">
+        A collection of certifications earned across programming, AI/ML, development, aptitude, and professional development domains.
+      </p>
+
+      <!-- Filter tabs -->
+      <div id="cert-tabs" class="reveal reveal-delay-3 flex flex-wrap gap-2 mb-8"></div>
+
+      <!-- Grid skeleton -->
+      <div id="cert-skeleton" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div class="skeleton rounded-xl" style="aspect-ratio:3/2"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:3/2"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:3/2"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:3/2"></div>
+        <div class="skeleton rounded-xl" style="aspect-ratio:3/2"></div>
+      </div>
+
+      <!-- Cert grid -->
+      <div id="cert-grid" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
+
+      <!-- Show all toggle (hidden until needed) -->
+      <div id="cert-show-more-wrap" class="hidden mt-8 text-center">
+        <button id="cert-show-more-btn"
+          class="px-6 py-2.5 rounded-xl text-sm font-semibold font-display transition-all"
+          style="background:var(--surface2);border:1px solid var(--border);color:var(--text)">
+          Show all <span id="cert-remaining"></span> more
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- ══════════════ CONTACT ══════════════ -->
   <section id="contact" class="py-20 md:py-32 dot-grid" style="background:var(--surface);">
@@ -1033,6 +1070,115 @@
         socEl.appendChild(a);
       });
     });
+
+  // ── Certificates section ──
+  (function() {
+    const CATEGORY_LABELS = {
+      'all':          'All',
+      'programming':  'Programming',
+      'ai-ml':        'AI / ML',
+      'development':  'Development',
+      'aptitude':     'Aptitude',
+      'soft-skills':  'Soft Skills',
+      'leadership':   'Leadership',
+      'internship':   'Internship',
+      'networking':   'Networking',
+      'professional': 'Professional',
+    };
+    const PAGE_SIZE = 10; // initial visible cards per filter
+    let allCerts = [];
+    let activeCat = 'all';
+    let showAll = false;
+
+    function filteredCerts() {
+      return activeCat === 'all' ? allCerts : allCerts.filter(c => c.category === activeCat);
+    }
+
+    function renderGrid() {
+      const list   = filteredCerts();
+      const grid   = document.getElementById('cert-grid');
+      const moreW  = document.getElementById('cert-show-more-wrap');
+      const moreB  = document.getElementById('cert-show-more-btn');
+      const remaining = document.getElementById('cert-remaining');
+      const visible = showAll ? list : list.slice(0, PAGE_SIZE);
+
+      grid.innerHTML = visible.map(c => `
+        <a href="show_resource.html?cert=${encodeURIComponent(c.id)}" target="_blank" rel="noopener"
+           title="${c.name}" style="display:block;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--bg);text-decoration:none;transition:transform 0.2s,box-shadow 0.2s"
+           onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)'"
+           onmouseleave="this.style.transform='';this.style.boxShadow=''">
+          <div style="aspect-ratio:3/2;overflow:hidden;background:var(--surface2)">
+            <img src="${c.image}" alt="${c.name}" loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s"
+              onmouseenter="this.style.transform='scale(1.04)'"
+              onmouseleave="this.style.transform=''"/>
+          </div>
+          <div style="padding:8px 10px">
+            <div style="font-size:0.72rem;font-family:'Syne',sans-serif;font-weight:600;color:var(--text);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.name}</div>
+            <div style="font-size:0.65rem;color:var(--muted);margin-top:1px">${c.issuer}</div>
+          </div>
+        </a>`).join('');
+
+      // Show-more button
+      if (!showAll && list.length > PAGE_SIZE) {
+        moreW.classList.remove('hidden');
+        remaining.textContent = list.length - PAGE_SIZE;
+      } else {
+        moreW.classList.add('hidden');
+      }
+    }
+
+    function renderTabs(categories) {
+      const tabs = document.getElementById('cert-tabs');
+      const all = ['all', ...categories];
+      tabs.innerHTML = all.map(cat => {
+        const label = CATEGORY_LABELS[cat] || cat;
+        const active = cat === activeCat;
+        return `<button data-cat="${cat}"
+          class="cert-tab-btn px-4 py-1.5 rounded-full text-xs font-display font-semibold transition-all"
+          style="background:${active ? 'var(--accent)' : 'var(--surface2)'};color:${active ? '#000' : 'var(--muted)'};border:1px solid ${active ? 'var(--accent)' : 'var(--border)'}"
+        >${label}</button>`;
+      }).join('');
+
+      tabs.querySelectorAll('.cert-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCat = btn.dataset.cat;
+          showAll = false;
+          tabs.querySelectorAll('.cert-tab-btn').forEach(b => {
+            const a = b.dataset.cat === activeCat;
+            b.style.background = a ? 'var(--accent)' : 'var(--surface2)';
+            b.style.color       = a ? '#000' : 'var(--muted)';
+            b.style.borderColor = a ? 'var(--accent)' : 'var(--border)';
+          });
+          renderGrid();
+        });
+      });
+    }
+
+    document.getElementById('cert-show-more-btn').addEventListener('click', () => {
+      showAll = true;
+      renderGrid();
+    });
+
+    fetch('data/certificates.json')
+      .then(r => r.json())
+      .then(certs => {
+        allCerts = certs;
+        document.getElementById('cert-skeleton').style.display = 'none';
+        const grid = document.getElementById('cert-grid');
+        grid.classList.remove('hidden');
+
+        // Collect unique categories in order of CATEGORY_LABELS
+        const catSet = new Set(certs.map(c => c.category));
+        const orderedCats = Object.keys(CATEGORY_LABELS).filter(k => k !== 'all' && catSet.has(k));
+
+        renderTabs(orderedCats);
+        renderGrid();
+      })
+      .catch(() => {
+        document.getElementById('cert-skeleton').style.display = 'none';
+      });
+  })();
 
   // ── Scroll reveal ──
   const revealObserver = new IntersectionObserver((entries) => {
