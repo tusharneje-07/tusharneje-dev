@@ -13,16 +13,16 @@
   <meta property="og:type"        content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/output.css" />
   <style>
-    :root { --bg:#0c0c0d; --surface:#141415; --surface2:#1c1c1e; --border:rgba(255,255,255,0.07); --text:#f0ede8; --muted:#8a8a8e; --accent:#f59e0b; }
-    [data-theme="light"] { --bg:#fafaf9; --surface:#f3f3f1; --surface2:#e8e8e5; --border:rgba(0,0,0,0.08); --text:#1a1a1a; --muted:#6b6b6b; --accent:#d97706; }
+    :root { --bg:#0c0c0d; --surface:#121317; --surface2:#1a1d24; --border:rgba(255,255,255,0.07); --text:#f0ede8; --muted:#8a8a8e; --accent:#f59e0b; --glow-a:rgba(245,158,11,0.15); --glow-b:rgba(56,189,248,0.1); }
+    [data-theme="light"] { --bg:#fafaf9; --surface:#f3f3f1; --surface2:#e8e8e5; --border:rgba(0,0,0,0.08); --text:#1a1a1a; --muted:#6b6b6b; --accent:#d97706; --glow-a:rgba(245,158,11,0.16); --glow-b:rgba(59,130,246,0.08); }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s;}
-    .dot-grid{background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:28px 28px;}
-    [data-theme="light"] .dot-grid{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);}
+    body{font-family:'Space Grotesk',sans-serif;background:radial-gradient(950px 400px at 12% -8%,var(--glow-a),transparent 62%),radial-gradient(900px 440px at 85% -12%,var(--glow-b),transparent 64%),var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s;}
+    .dot-grid{background-image:linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);background-size:34px 34px;}
+    [data-theme="light"] .dot-grid{background-image:linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);}
     #navbar{position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.3s,backdrop-filter 0.3s;}
     #navbar.scrolled{background:rgba(12,12,13,0.80);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
     [data-theme="light"] #navbar.scrolled{background:rgba(250,250,249,0.80);}
@@ -32,8 +32,8 @@
     .ham-open .ham-line:nth-child(1){transform:translateY(6px) rotate(45deg);}
     .ham-open .ham-line:nth-child(2){opacity:0;}
     .ham-open .ham-line:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
-    #mobile-nav{display:none;position:fixed;inset:0;z-index:99;background:var(--bg);padding:5rem 2rem 2rem;flex-direction:column;gap:0.5rem;}
-    #mobile-nav.open{display:flex;}
+    #mobile-nav{display:flex;position:fixed;top:0;right:0;bottom:0;width:min(88vw,360px);z-index:99;background:color-mix(in srgb,var(--bg) 90%,transparent);padding:5.4rem 1rem 1rem;flex-direction:column;gap:0.35rem;transform:translateX(104%);opacity:0;pointer-events:none;backdrop-filter:blur(14px);border-left:1px solid var(--border);transition:transform 0.28s ease,opacity 0.28s ease;}
+    #mobile-nav.open{transform:translateX(0);opacity:1;pointer-events:auto;}
     ::-webkit-scrollbar{width:5px;}
     ::-webkit-scrollbar-track{background:var(--bg);}
     ::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:99px;}
@@ -71,7 +71,7 @@
 
     /* Copy code button */
     .code-block-wrap{position:relative;}
-    .copy-btn{position:absolute;top:0.6rem;right:0.75rem;font-size:0.7rem;font-family:'DM Sans',sans-serif;padding:3px 9px;border-radius:5px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:color 0.2s;}
+    .copy-btn{position:absolute;top:0.6rem;right:0.75rem;font-size:0.7rem;font-family:'Space Grotesk',sans-serif;padding:3px 9px;border-radius:5px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:color 0.2s;}
     .copy-btn:hover{color:var(--accent);}
     .copy-btn.copied{color:var(--accent);}
 
@@ -92,8 +92,8 @@
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="index.html#hero" class="font-display font-bold text-lg tracking-tight" style="color:var(--text)">Tushar<span style="color:var(--accent)">.</span></a>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+    <a href="index.html#hero" class="font-mono font-semibold text-sm tracking-tight px-2.5 py-1.5 rounded-lg" style="color:var(--text); background:var(--surface); border:1px solid var(--border)"><span style="color:var(--accent)">$</span> tushar.dev</a>
     <div class="hidden md:flex items-center gap-1">
       <a href="index.html#about"      class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--muted)">About</a>
       <a href="blog.html"             class="nav-link px-3 py-1.5 rounded-md text-sm font-medium" style="color:var(--accent)">Blog</a>
@@ -117,17 +117,17 @@
 </nav>
 
 <div id="mobile-nav" role="dialog">
-  <a href="index.html#about"      class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">About</a>
-  <a href="blog.html"             class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--accent);border-color:var(--border)">Blog</a>
-  <a href="index.html#experience" class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Experience</a>
-  <a href="index.html#skills"     class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Skills</a>
-  <a href="index.html#projects"   class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Projects</a>
-  <a href="index.html#research"      class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Research</a>
-  <a href="index.html#activities"    class="mobile-nav-link text-2xl font-display font-semibold py-3 border-b" style="color:var(--text);border-color:var(--border)">Activities</a>
-  <a href="index.html#contact"       class="mobile-nav-link text-2xl font-display font-semibold py-3"          style="color:var(--text)">Contact</a>
+  <a href="index.html#about"      class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">About</a>
+  <a href="blog.html"             class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--border));background:var(--surface)">Blog</a>
+  <a href="index.html#experience" class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">Experience</a>
+  <a href="index.html#skills"     class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">Skills</a>
+  <a href="index.html#projects"   class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">Projects</a>
+  <a href="index.html#research"      class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">Research</a>
+  <a href="index.html#activities"    class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">Activities</a>
+  <a href="index.html#contact"       class="mobile-nav-link text-base font-display font-semibold py-3 px-4 rounded-xl" style="color:var(--text);border:1px solid var(--border);background:var(--surface)">Contact</a>
 </div>
 
-<main class="pt-16">
+<main class="pt-14">
   <!-- SKELETON STATE -->
   <div id="skeleton-state">
     <div class="dot-grid py-14 md:py-20">
