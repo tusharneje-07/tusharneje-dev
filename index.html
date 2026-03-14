@@ -58,6 +58,107 @@
       overflow-x: hidden;
     }
 
+    body.is-booting {
+      overflow: hidden;
+    }
+
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(8, 9, 12, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    #page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .boot-shell {
+      width: min(520px, 92vw);
+      border-radius: 14px;
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+      background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 95%, transparent), color-mix(in srgb, var(--surface2) 90%, transparent));
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.45);
+    }
+
+    .boot-head {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .boot-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--muted);
+    }
+
+    .boot-dot:nth-child(1) { background: #ef4444; }
+    .boot-dot:nth-child(2) { background: #f59e0b; }
+    .boot-dot:nth-child(3) { background: #22c55e; }
+
+    .boot-body {
+      padding: 14px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: #cfd4dd;
+    }
+
+    .boot-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .boot-line:last-child {
+      margin-bottom: 0;
+      color: #97a2b4;
+    }
+
+    .boot-sign {
+      color: var(--accent);
+    }
+
+    .boot-spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: bootSpin 0.7s linear infinite;
+    }
+
+    @keyframes bootSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    img.img-pending {
+      opacity: 0;
+      filter: blur(9px);
+      transform: scale(1.015);
+    }
+
+    img.img-ready {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+      transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease;
+    }
+
     .grid-lines {
       background-image:
         linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
@@ -611,7 +712,22 @@
     .ham-open .ham-line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   </style>
 </head>
-<body>
+<body class="is-booting">
+
+<div id="page-loader" aria-live="polite" aria-label="Page loading">
+  <div class="boot-shell">
+    <div class="boot-head">
+      <span class="boot-dot"></span>
+      <span class="boot-dot"></span>
+      <span class="boot-dot"></span>
+    </div>
+    <div class="boot-body">
+      <div class="boot-line"><span class="boot-sign">$</span><span>initializing portfolio runtime...</span></div>
+      <div class="boot-line"><span class="boot-sign">$</span><span>loading sections, assets, and modules</span></div>
+      <div class="boot-line"><span class="boot-spinner" aria-hidden="true"></span><span>almost there</span></div>
+    </div>
+  </div>
+</div>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav id="navbar" aria-label="Main navigation">
@@ -693,12 +809,6 @@
           <div class="profile-shell max-w-sm mx-auto lg:ml-auto lg:mr-0">
             <div class="profile-frame">
               <img src="assets/me.webp" alt="Tushar Neje" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block" loading="eager" />
-              <div style="position:absolute;inset:auto 0 0 0;padding:12px;background:linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2), transparent)">
-                <div class="dev-chip" style="width:fit-content;background:rgba(12,12,13,0.75)">
-                  <span class="status-pulse"></span>
-                  Open for Opportunities
-                </div>
-              </div>
             </div>
             <div class="mt-3 flex flex-wrap gap-2">
               <span class="dev-chip">Pune, India</span>
@@ -723,9 +833,12 @@
         </div>
 
         <div class="order-2 lg:order-1 text-center lg:text-left">
-          <div class="reveal inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style="border:1px solid var(--border); background:var(--surface)">
-            <span class="font-mono text-xs" style="color:var(--accent)">dev@tushar:~$</span>
-            <span class="font-mono text-xs" style="color:var(--muted)">whoami</span>
+          <div class="reveal flex flex-wrap items-center gap-2 mb-5 justify-center lg:justify-start">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full" style="border:1px solid var(--border); background:var(--surface)">
+              <span class="font-mono text-xs" style="color:var(--accent)">dev@tushar:~$</span>
+              <span class="font-mono text-xs" style="color:var(--muted)">whoami</span>
+            </div>
+            <span class="dev-chip" style="background:color-mix(in srgb, var(--surface2) 82%, transparent)"><span class="status-pulse"></span>Open for Opportunities</span>
           </div>
 
           <h1 class="reveal reveal-delay-1 leading-[0.97] mb-5" style="font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.2rem,6.4vw,4.7rem); letter-spacing:-0.025em; color:var(--text)">
@@ -1078,6 +1191,52 @@
 
 <!-- ══════════════ SCRIPTS ══════════════ -->
 <script>
+  // ── Page + image loading ──
+  const pageLoader = document.getElementById('page-loader');
+  let pageLoaderHidden = false;
+
+  function hidePageLoader() {
+    if (pageLoaderHidden || !pageLoader) return;
+    pageLoaderHidden = true;
+    pageLoader.classList.add('hidden');
+    document.body.classList.remove('is-booting');
+    setTimeout(() => pageLoader.remove(), 420);
+  }
+
+  function bindImageLoadingState(img) {
+    if (!img || img.dataset.loadBound === '1') return;
+    img.dataset.loadBound = '1';
+
+    const markReady = () => {
+      img.classList.remove('img-pending');
+      img.classList.add('img-ready');
+    };
+
+    img.classList.add('img-pending');
+    if (img.complete) {
+      requestAnimationFrame(markReady);
+      return;
+    }
+
+    img.addEventListener('load', markReady, { once: true });
+    img.addEventListener('error', markReady, { once: true });
+  }
+
+  document.querySelectorAll('img').forEach(bindImageLoadingState);
+  const imageObserver = new MutationObserver((mutations) => {
+    mutations.forEach((m) => {
+      m.addedNodes.forEach((node) => {
+        if (!node || node.nodeType !== 1) return;
+        if (node.tagName === 'IMG') bindImageLoadingState(node);
+        node.querySelectorAll?.('img').forEach(bindImageLoadingState);
+      });
+    });
+  });
+  imageObserver.observe(document.body, { childList: true, subtree: true });
+
+  window.addEventListener('load', () => setTimeout(hidePageLoader, 220));
+  setTimeout(hidePageLoader, 6500);
+
   // ── Theme ──
   const html = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
@@ -1173,15 +1332,18 @@
 
     function decryptLine(line) {
       let reveal = 0;
+      const chars = [...line];
 
       function tick() {
-        target.textContent = [...line].map((ch, idx) => {
-          if (ch === ' ') return ' ';
-          return idx < reveal ? ch : pickRandom();
-        }).join('');
+        const shown = chars.slice(0, reveal).map(ch => (ch === ' ' ? ' ' : ch));
+        if (reveal < chars.length) {
+          const next = chars[reveal];
+          shown.push(next === ' ' ? ' ' : pickRandom());
+        }
+        target.textContent = shown.join('');
 
         reveal += 1;
-        if (reveal <= line.length) {
+        if (reveal <= chars.length) {
           setTimeout(tick, decryptStepMs);
           return;
         }

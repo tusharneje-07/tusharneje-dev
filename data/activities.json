@@ -1,7 +1,7 @@
 {
   "extracurricular": [
     {
-      "description": "Active cricket player, participated in institutional and inter-college cricket tournaments.",
+      "description": "Participated in institutional and inter-college cricket tournaments.",
       "id": "extra-cricket",
       "image": "assets/extracurricular/CRICKET.webp",
       "name": "Cricket",
@@ -15,26 +15,26 @@
       "type": "creative"
     },
     {
-      "description": "Event photography and documentation.",
+      "description": "Interest in photography and visual storytelling.",
       "id": "extra-ph2",
       "image": "assets/extracurricular/PH2.webp",
-      "name": "Photography – Event Coverage",
+      "name": "Photography & Visual Arts",
       "type": "creative"
     }
   ],
   "hackathons": [
     {
-      "description": "Participated in institutional hackathon organized at DKTE Polytechnic.",
+      "description": "Secured 1st Rank at Advitya, organized by DKTE Polytechnic.",
       "id": "hack-dkte",
       "image": "assets/hackathons/DKTE.webp",
       "location": "Ichalkaranji",
       "name": "DKTE Hackathon",
       "organization": "DKTE's Yashwantrao Chavan Polytechnic",
-      "result": "Participant",
+      "result": "1st Rank",
       "year": 2023
     },
     {
-      "description": "Secured 1st Rank in Crackers 2.0, Advitya competition at JJMCOE.",
+      "description": "Secured 1st Rank in Crackers 2.0, organized by JJMCOE.",
       "id": "hack-jjmcoe1",
       "image": "assets/hackathons/JJMCOE1.webp",
       "location": "Pune",
@@ -44,13 +44,13 @@
       "year": 2023
     },
     {
-      "description": "Participated in technical competition at JJMCOE.",
+      "description": "Secured 3rd Rank in Crackers, organized by JJMCOE.",
       "id": "hack-jjmcoe3",
       "image": "assets/hackathons/JJMCOE3.webp",
       "location": "Pune",
       "name": "JJMCOE Competition",
       "organization": "Jayawantrao Sawant College of Engineering",
-      "result": "Participant",
+      "result": "3rd Rank",
       "year": 2023
     },
     {
